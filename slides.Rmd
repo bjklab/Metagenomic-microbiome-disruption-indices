@@ -323,7 +323,6 @@ knitr::include_graphics(path = "figs/seq_tool_comp_domain_plot_sra_sc.png")
 
 
 ---
-exclude: true
 
 ## Urine Metagenomics: Host vs Bacterial Reads  
 
