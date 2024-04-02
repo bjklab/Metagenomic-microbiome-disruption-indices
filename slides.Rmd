@@ -39,7 +39,7 @@ xaringanExtra::use_share_again()
 
 ---
 class: top left hide-count
-background-image: url(img/daniel-norris-V67NBDhwARo-unsplash.jpg)
+background-color: #00688b
 background-size: cover
 
 .move-top10[
@@ -56,7 +56,7 @@ University of Pennsylvania
 ]
 ]
 
-.footnote-right[<span style='color: white'>photo: Daniel Norris @unsplash</span>]  
+<!-- .footnote-right[<span style='color: white'>photo: Daniel Norris @unsplash</span>]   -->
 
 
 
@@ -80,6 +80,85 @@ exclude: true
     - NIAID U19AI174998  
 
 ]
+
+---
+class: top left
+
+.pull-left[
+
+### Sequence-Based Diagnostics
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='85%'}
+knitr::include_graphics(path = "img/karius_example_report.png")
+
+```
+
+- plasma cell-free DNA (e.g., Karius)  
+  
+- sequencing to diagnose prosthetic joint infection, CSF metagenomics, etc  
+
+]
+
+.pull-right[
+
+### Live Biotherapeutic Products    
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='85%'}
+knitr::include_graphics(path = "img/ve303_kmplot.png")
+
+```
+
+- 2 first-generation LBPs FDA-approved  
+  
+- 1 second-generation LBP in phase 3  
+
+]
+
+.footnote-left[Blauwkamp TA et al _Nature Micro_ 2023; Ivy MI et al _J Clin Micro_ 2018; Wilson MR et al _NEJM_ 2019; Khanna S et al _Drugs_ 2022; Feuerstadt P et al _NEJM_ 2022; Louie T et al _JAMA_ 2023]  
+
+
+---
+
+## Outline  
+
+.pad-left[
+- Microbiome disruption indices (MDIs) for _diagnosis_:
+
+    - bacterial community diversity (e.g., Shannon diversity)  
+
+    - bacterial community dominance  
+
+    - absolute bacterial abundance  
+
+    - combinations of above  
+
+- In addition to diagnostic utility, role in quantifying _colonization resistance_: 
+
+    - features of resident mucosal microbiota that resist introduction of new species (including pathogens) via direct competition and/or host immune modulation
+
+]
+
+
+.footnote-left[Blaser _Science_ 2016; Raymond et al _ISME J_ 2016; Kelly & Tebas _Chest_ 2018; Al-Hasan et al _J Infect_ 2010; Jensen et al _CMI_ 2011; Munoz et al _CMI_ 2016]  
+
+
+---
+
+## MDI Questions         
+
+.pad-left[
+
+- Diagnostic vs predictive intent?  
+
+- Longitudinal vs cross-sectional?  
+
+- Proportional vs absolute abundance?  
+
+- Single site vs comparative?  
+
+]
+
+
 ---
 
 ## Microbiome Disruption Indices  
@@ -117,51 +196,171 @@ knitr::include_graphics(path = "figs/ziegler_ofid_2019_pcoa.png")
 
 .footnote-left[Ziegler et al _OFID_ 2019]  
 
----
-
-## Microbiome Disruption & Bacterial Transmission    
-  
-.pad-left[  
-
-- <u>Hypothesis</u>: post-infection/antibiotic repopulation matters:      
-
-    - both infection & antibiotics decimate mucosal microbial communities  
-  
-    - the "source" for repopulation often an MDRO-rich hospital environment  
-    
-    - failed repopulation risks recurrent infection (CDI & others)   
-    
-    - microbial therapeutics can restore colonization resistance  
-  
-- <u>Aim</u>: use microbiome measures to trace bacterial transmission  
-
-    - define mechanisms of **colonization resistance** 
-    
-    - features of resident mucosal microbiota that resist introduction of new species (including pathogens) via direct competition and/or host immune modulation  
-
-]  
-
-.footnote-left[Blaser _Science_ 2016; Raymond et al _ISME J_ 2016; Kelly & Tebas _Chest_ 2018; Al-Hasan et al _J Infect_ 2010; Jensen et al _CMI_ 2011; Munoz et al _CMI_ 2016]  
 
 
 ---
 
-## Conclusions    
+## Microbiome Disruption Indices  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='59%'}
+knitr::include_graphics(path = "img/bittinger_charlson_enrichment.png")
+
+```
+
+.footnote-left[Charlson ES et al _AJRCCM_ 2012]  
+
+
+---
+
+## Urine Metagenomics: Wilkins & Anesi Study  
+
+.pad-left[
+-  Kidney transplantation (KT): prior studies have documented changes in the intestinal microbiome composition and function (dysbiosis) following KT. 
+
+- Question of impact on infectious and inflammatory (e.g., rejection) outcomes. 
+
+- Pilot feasibility study: the urinary microbiome may have even more direct impact on post-KT outcomes.
+
+- Is metagenomic urine microbiome profiling feasible and informative in post-KT population?   
+]
+
+
+---
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='75%'}
+library(tidyverse)
+library(gt)
+library(gtsummary)
+
+t1 <- read_rds("data/table1_urineindication_exposure.rds")
+
+t1
+
+```
+
+
+---
+
+## Urine Metagenomics: Wilkins & Anesi Study  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='55%'}
+library(tidyverse)
+
+# p_read_taxon_percentage_color_by_ncbi <- read_rds("data/p_read_taxon_percentage_color_by_ncbi.rds")
+
+# p1 <- p_read_taxon_percentage_color_by_ncbi + scale_y_discrete(limits = rev) + theme(legend.title = ggtext::element_markdown()) + labs(x = "Proportion of Metagenomic<br>Reads Assigned", fill = "NCBI<br>Taxonomy") + guides(fill=guide_legend(nrow=3, byrow=TRUE))
+# p1
+
+knitr::include_graphics(path = "figs/p_read_taxon_percentage_color_by_ncbi.png")
+
+
+```
+
+
+---
+
+## Urine Metagenomics: Wilkins & Anesi Study  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='55%'}
+library(tidyverse)
+
+# p_read_species_percent_bacterial_by_indication <- read_rds("data/p_read_species_percent_bacterial_by_indication.rds")
+
+# p2 <- p_read_species_percent_bacterial_by_indication + labs(y = "Proportion of Reads Assigned to Bacteria")
+# p2
+
+knitr::include_graphics(path = "figs/p_read_species_percent_bacterial_by_indication.png")
+
+
+```
+
+
+---
+
+## Urine Metagenomics: Wilkins & Anesi Study  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='65%'}
+library(tidyverse)
+
+# p_read_species_percent_bacterial_by_HStime_facet_symptoms <- read_rds("data/p_read_species_percent_bacterial_by_HStime_facet_symptoms.rds")
+
+# p_read_species_percent_bacterial_by_HStime_facet_symptoms
+
+knitr::include_graphics(path = "figs/p_read_species_percent_bacterial_by_HStime_facet_symptoms.png")
+
+
+```
+
+
+---
+
+## Urine Metagenomics: Wilkins & Anesi Study  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='95%'}
+library(tidyverse)
+
+# p_resist_kappa_fixed_pred_simple <- read_rds("data/p_resist_kappa_fixed_pred_simple.rds")
+
+# p_resist_kappa_fixed_pred_simple
+
+knitr::include_graphics(path = "figs/p_resist_kappa_fixed_pred_simple.png")
+
+
+```
+
+
+---
+
+## Urine Metagenomics: Host vs Bacterial Reads  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='65%'}
+library(tidyverse)
+
+knitr::include_graphics(path = "figs/seq_tool_comp_domain_plot_sra_sc.png")
+
+
+```
+
+
+---
+exclude: true
+
+## Urine Metagenomics: Host vs Bacterial Reads  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='65%'}
+library(tidyverse)
+
+knitr::include_graphics(path = "figs/seq_tool_comp_domain_plot_sra_tc.png")
+
+
+```
+
+
+---
+
+## Future Directions      
   
 .pad-left[
 
-- Bacterial infections are characterized by low-diversity / dominance, emphasizing the importance of post-treatment repopulation; antibiotics exacerbate low-diversity state in a class-dependent manner.  
+- MDIs: 
 
-- Passive repopulation from the healthcare environment risks MDRO colonization.    
+    - diagnostic utility
 
-- Opportunity for MBTs to engineer mucosal microbiome succession and prevent infection, but PK/PD, optimal conditioning, and optimal timing must be better defined.  
-  
-- To understand the mechanisms of microbiome change and MBT effects requires novel modeling approaches, including HGAMs and phylogenetic regression.   
+    - markers of colonization resistance  
+
+    - risk for MDRO colonization/infection  
+
+- Approaches:  
+
+    - amplicon vs metagenomic: value of host signal?  
+
+    - integration of metagenomic pipelines?  
   
 ]
 
 
 ---
+exclude: true
 
 ## Acknowledgements    
 
@@ -208,6 +407,8 @@ Clifford McDonald, Alison Laufer Halpin
 
 
 ---
+exclude: true
+
 class: middle center hide-count
 background-image: url(img/giorgio-trovato-IclGoWB6wEY-unsplash.jpg)
 background-size: cover
@@ -228,5 +429,11 @@ background-size: cover
 .fade-in[<span style="font-size:0.5em; color:white">slides ↓ </span>]  
 <span style="link-color:white">[bjklab.org](http://www.bjklab.org)</span>  
 ]  
+
+
+---
+class: top left hide-count
+background-color: #00688b
+background-size: cover
 
 
