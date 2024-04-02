@@ -1,0 +1,232 @@
+---
+title: "Metagenomic Microbiome Disruption Indices"
+subtitle: "<hr>"
+author: "Brendan J. Kelly, MD, MS"
+institute: "Infectious Diseases, Epidemiology, & Microbiology" 
+date: "`r format(Sys.Date(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer-inferno-grids-fade.css
+    lib_dir: libs
+    chakra: libs/remark-latest.min.js
+    seal: false
+    nature:
+      ratio: 16:9
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: "%current%"
+
+---
+exclude: true
+
+```{r setup, include=FALSE, echo=FALSE, message=FALSE, error=FALSE, include=FALSE, comment=FALSE}
+options(htmltools.dir.version = FALSE)
+xaringan::summon_remark()
+library(tidyverse)
+library(gt)
+
+```
+
+```{r xaringan-tile-view, echo=FALSE, message=FALSE, error=FALSE, include=FALSE, comment=FALSE}
+xaringanExtra::use_tile_view()
+xaringanExtra::use_webcam()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_animate_css()
+xaringanExtra::use_share_again()
+#xaringanExtra::use_scribble(pen_color = "#56106E")
+```
+
+---
+class: top left hide-count
+background-image: url(img/daniel-norris-V67NBDhwARo-unsplash.jpg)
+background-size: cover
+
+.move-top20[
+.title-text[<span style='font-size:0.8em;color:#202020'>Metagenomic Microbiome Disruption Indices</span>]  
+.title-subtext[<span style='font-size:0.8em'></span>]  
+]  
+  
+.callout-url-leftcorner[
+.title-nametext[
+Brendan J. Kelly, MD, MS  
+Infectious Diseases, Epidemiology & Microbiology  
+University of Pennsylvania  
+`r format(Sys.Date(), '%d %B %Y')`   
+]
+]
+
+.footnote-right[<span style='color: white'>photo: Daniel Norris @unsplash</span>]  
+
+
+
+---
+exclude: true
+
+## Disclosures  
+
+.pad-left[  
+
+- No conflicts of interest.  
+
+- Research supported by:
+
+    - NIAID K23 AI121485  
+    - CDC BAA 200-2016-91964  
+    - CDC BAA 200-2016-91937  
+    - CDC BAA 200-2018-02919  
+    - CDC BAA 200-2021-10986   
+    - CDC Prevention Epicenters U54CK000610  
+    - NIAID U19AI174998  
+
+]
+---
+
+## Microbiome Disruption Indices  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='55%'}
+knitr::include_graphics(path = "figs/harrigan_cid_2021_oddsratio.png")
+
+```
+
+.footnote-left[Harrigan et al _CID_ 2021]  
+
+
+---
+
+## Microbiome Disruption Indices  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='60%'}
+knitr::include_graphics(path = "figs/p_toxineia_clostridioides_boxplot_tp.png")
+
+```
+
+
+.footnote-left[Kevin Alby, Colin Tkatch, John Jachimiak. Submitted.]  
+
+
+---
+
+## Antibiotics & Microbiome Disruption  
+
+```{r, echo=FALSE, echo=FALSE, message=FALSE, warning=FALSE, error=FALSE, fig.align='center', out.width='50%'}
+knitr::include_graphics(path = "figs/ziegler_ofid_2019_pcoa.png")
+
+```
+
+
+.footnote-left[Ziegler et al _OFID_ 2019]  
+
+---
+
+## Microbiome Disruption & Bacterial Transmission    
+  
+.pad-left[  
+
+- <u>Hypothesis</u>: post-infection/antibiotic repopulation matters:      
+
+    - both infection & antibiotics decimate mucosal microbial communities  
+  
+    - the "source" for repopulation often an MDRO-rich hospital environment  
+    
+    - failed repopulation risks recurrent infection (CDI & others)   
+    
+    - microbial therapeutics can restore colonization resistance  
+  
+- <u>Aim</u>: use microbiome measures to trace bacterial transmission  
+
+    - define mechanisms of **colonization resistance** 
+    
+    - features of resident mucosal microbiota that resist introduction of new species (including pathogens) via direct competition and/or host immune modulation  
+
+]  
+
+.footnote-left[Blaser _Science_ 2016; Raymond et al _ISME J_ 2016; Kelly & Tebas _Chest_ 2018; Al-Hasan et al _J Infect_ 2010; Jensen et al _CMI_ 2011; Munoz et al _CMI_ 2016]  
+
+
+---
+
+## Conclusions    
+  
+.pad-left[
+
+- Bacterial infections are characterized by low-diversity / dominance, emphasizing the importance of post-treatment repopulation; antibiotics exacerbate low-diversity state in a class-dependent manner.  
+
+- Passive repopulation from the healthcare environment risks MDRO colonization.    
+
+- Opportunity for MBTs to engineer mucosal microbiome succession and prevent infection, but PK/PD, optimal conditioning, and optimal timing must be better defined.  
+  
+- To understand the mechanisms of microbiome change and MBT effects requires novel modeling approaches, including HGAMs and phylogenetic regression.   
+  
+]
+
+
+---
+
+## Acknowledgements    
+
+.pull-left[
+- __MOTION Lab & C-STAR @ Penn__
+Laura Cowden, Laurel Glaser, Kyle Rodino, Sean Loughrey, 
+Magda Wernovsky, Erik Clarke, Michael David, Matt Ziegler, 
+Lauren Dutcher, Ebbing Lautenbach, Jim Harrigan, Alexa Patel, Dylan Tapper, Anne Jaskowiak, Pam Tolomeo   
+
+- __Bushman Laboratory @ Penn__
+Arwa Abbas, Aoife Roche, Andrew Marques,
+Aubrey Bailey, John Everett,
+Rick Bushman
+
+- __PennCHOP Microbiome Program__
+Lisa Mattei, Huanjia Zhang, Kyle Bittinger
+
+]
+
+
+.pull-right[
+- __Collman Laboratory @ Penn__
+Ize Imai, Aurea Simon Soro, John McGinniss, Ron Collman
+
+- __Division of ID @ Penn__
+Ian Frank, Pablo Tebas, Robert Gross, Emily Blumberg
+
+- __Rutgers University & Penn DBEI__
+Jason Roy, Arman Oganisian
+  
+- __CDC Prevention Epicenters__
+Clifford McDonald, Alison Laufer Halpin
+  
+- __Funding__
+<u>CDC</u>: BAAs 200-2016-91964, 200-2018-02919, 200-2021-10986,
+200-2021-10986 & <u>NIAID</u>: K23 AI121485
+
+]
+
+.center[
+### brendank@pennmedicine.upenn.edu
+]
+
+
+
+---
+class: middle center hide-count
+background-image: url(img/giorgio-trovato-IclGoWB6wEY-unsplash.jpg)
+background-size: cover
+
+.title-subtext[Questions?]
+
+
+
+---
+exclude: true
+class: middle center hide-count
+background-image: url(img/giorgio-trovato-IclGoWB6wEY-unsplash.jpg)
+background-size: cover
+
+.title-subtext[Questions?]
+
+.callout-url-bottom[  
+.fade-in[<span style="font-size:0.5em; color:white">slides ↓ </span>]  
+<span style="link-color:white">[bjklab.org](http://www.bjklab.org)</span>  
+]  
+
+
