@@ -42,8 +42,8 @@ class: top left hide-count
 background-image: url(img/daniel-norris-V67NBDhwARo-unsplash.jpg)
 background-size: cover
 
-.move-top20[
-.title-text[<span style='font-size:0.8em;color:#202020'>Metagenomic Microbiome Disruption Indices</span>]  
+.move-top10[
+.title-text[<span style='font-size:1.1em;color:#202020;text-shadow: #FFFFFF 1px 0 10px;'>Metagenomic Microbiome Disruption Indices</span>]  
 .title-subtext[<span style='font-size:0.8em'></span>]  
 ]  
   
